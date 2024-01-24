@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
 
+/* ========= Media Queries Medium screen  */
+@media screen and (max-width:1024px){}
+
+
+/* ========= Media Queries Small screen  */
+@media screen and (max-width:600px){}
+
 
 *{
     margin: 0;
@@ -55,7 +62,6 @@ h1{
 
 section{
     margin-top: 8rem;
-
 }
 section > h2,
 section >h5{

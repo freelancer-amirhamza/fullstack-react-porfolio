@@ -11,16 +11,16 @@ function About() {
   return (
     <section id="about">
       <motion.h5
-       variants={fadeIn('down', 0.5)}
+       variants={fadeIn('down', 0.4)}
        initial='hidden'
        whileInView={'show'}
-       viewport={{once:false, amount:0.7 }}
+       viewport={{once:false, amount:0.6 }}
       >Go To Know</motion.h5>
       <motion.h2
        variants={fadeIn('down', 0.3)}
        initial='hidden'
        whileInView={'show'}
-       viewport={{once:false, amount:0.7 }}>About Me</motion.h2>
+       viewport={{once:false, amount:0.6 }}>About Me</motion.h2>
       
       <div className="container about_container">
         <motion.div

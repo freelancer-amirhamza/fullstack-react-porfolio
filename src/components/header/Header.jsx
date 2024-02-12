@@ -10,9 +10,7 @@ import { TypeAnimation } from "react-type-animation";
 const Header = () => {
   return (
     <header>
-      <motion.div
-        
-        className="container header_container">
+      <div className="container header_container">
           <motion.div 
            variants={fadeIn('down', 0.3)}
            initial='hidden'
@@ -35,20 +33,19 @@ const Header = () => {
               repeat={Infinity}
               className="text-light post"
             />
-        
         </motion.div>
         <CTA />
         <HeaderSocials/>
         <motion.div
-         variants={fadeIn('up', 0.6)}
+         variants={fadeIn('up', 0.3)}
          initial='hidden'
          whileInView={'show'}
-         viewport={{once:false, amount:0.7 }}
+         viewport={{once:false, amount:0.5 }}
         className="me">
           <img src={ME} alt="Amir Hamza" />
         </motion.div>
         <a href="#contact" className="scroll-down"> Scroll Down</a>
-      </motion.div>
+      </div>
     </header>
   );
 };

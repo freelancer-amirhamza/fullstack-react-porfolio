@@ -1,14 +1,29 @@
 import React from 'react'
+import { motion } from 'framer-motion';
 import './experiences.css';
 import { FaCircleCheck } from "react-icons/fa6";
+import { fadeIn } from '../../vaariants';
 
 const Experiences = () => {
   return (
     <section id="experience">
-      <h5>What I Have Skills</h5>
-      <h2>Experiences</h2>
+
+      <motion.h5
+       variants={fadeIn('down', 0.3)}
+       initial='hidden'
+       whileInView={'show'}
+       viewport={{once:false, amount:0.7 }}>What I Have Skills</motion.h5>
+      <motion.h2
+       variants={fadeIn('down', 0.6)}
+       initial='hidden'
+       whileInView={'show'}
+       viewport={{once:false, amount:0.7 }}>Experiences</motion.h2>
       <div className="container experience-container">
-        <div className="experience-frontend">
+        <motion.div
+        variants={fadeIn('right', 0.3)}
+        initial='hidden'
+        whileInView={'show'}
+        viewport={{once:false, amount: 0.3}} className="experience-frontend">
           <h3>Frontend Development</h3>
           <div className="experience-content">
             <article className="experience-details">
@@ -54,11 +69,16 @@ const Experiences = () => {
               </div>
             </article>
           </div>
-        </div>
+        </motion.div>
 
 {/* ======================= Backend Experience ================ */}
 
-        <div className="experience-backend">
+        <motion.div
+        variants={fadeIn('left', 0.5)}
+        initial='hidden'
+        whileInView={'show'}
+        viewport={{once:false, amount: 0.3}}
+        className="experience-backend">
         <h3>Backend Development</h3>
           <div className="experience-content">
             <article className="experience-details">
@@ -90,7 +110,7 @@ const Experiences = () => {
               </div>
             </article>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   )

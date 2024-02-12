@@ -1,22 +1,43 @@
 import React from 'react'
 import './about.css';
+import { motion } from 'framer-motion';
 import ME from '../../assets/me-about.png';
 import { FaAward } from "react-icons/fa6";
 import { FaUserFriends } from "react-icons/fa";
 import { MdLibraryAddCheck } from "react-icons/md"
+import { fadeIn } from '../../vaariants';
 
 function About() {
   return (
     <section id="about">
-      <h5>Go To Know</h5>
-      <h2>About Me</h2>
+      <motion.h5
+       variants={fadeIn('down', 0.5)}
+       initial='hidden'
+       whileInView={'show'}
+       viewport={{once:false, amount:0.7 }}
+      >Go To Know</motion.h5>
+      <motion.h2
+       variants={fadeIn('down', 0.3)}
+       initial='hidden'
+       whileInView={'show'}
+       viewport={{once:false, amount:0.7 }}>About Me</motion.h2>
+      
       <div className="container about_container">
-        <div className="about_me">
+        <motion.div
+        variants={fadeIn('right', 0.5)}
+        initial='hidden'
+        whileInView={'show'}
+        viewport={{once:false, amount:0.5 }}
+        className="about_me">
           <div className="about_me-image">
             <img src={ME} alt="Amir Hamza" />
           </div>
-        </div>
-        <div className="about-content">
+        </motion.div>
+        <motion.div
+        variants={fadeIn('left', 0.5)}
+        initial='hidden'
+        whileInView={'show'}
+        viewport={{once:false, amount: 0.3}} className="about-content">
         <div className="about-cards">
           <article className="about-card">
             <FaAward className='about-icon'/>
@@ -41,7 +62,7 @@ function About() {
             aspernatur et odit quidem deleniti numquam aliquid hic praesentium.
         </p>
         <a href="#contact" className='btn btn-primary'>Let's Talk</a>
-        </div>
+        </motion.div>
 
       </div>
     </section>

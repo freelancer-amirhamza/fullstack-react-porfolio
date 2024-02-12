@@ -1,13 +1,30 @@
 import React from 'react';
 import './services.css';
 import { FaRegCheckCircle } from "react-icons/fa";
+import { motion } from 'framer-motion';
+import { fadeIn } from '../../vaariants';
 
 const Services = () => {
   return (
     <section id="services">
-      <h5>What I Offer</h5>
-      <h2>Services</h2>
-      <div className="container service-container">
+      <motion.h5
+       variants={fadeIn('down', 0.3)}
+       initial='hidden'
+       whileInView={'show'}
+       viewport={{once:false, amount:0.7 }}>What I Offer</motion.h5>
+      
+      <motion.h2
+       variants={fadeIn('down', 0.3)}
+       initial='hidden'
+       whileInView={'show'}
+       viewport={{once:false, amount:0.7 }}>Services</motion.h2>
+      <motion.div
+      variants={fadeIn('up', 0.2)}
+      initial='hidden'
+      whileInView={'show'}
+      viewport={{once:false, amount:0.3 }}
+      
+      className="container service-container">
         {/* UI/UX  */}
         <article className="service">
           <div className="service-head">
@@ -108,7 +125,7 @@ const Services = () => {
             </li>
           </ul>
         </article>
-      </div>
+      </motion.div>
     </section>
   )
 }

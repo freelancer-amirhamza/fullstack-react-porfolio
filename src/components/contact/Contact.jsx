@@ -1,4 +1,5 @@
 import React from 'react'
+import { motion } from 'framer-motion';
 import './contact.css';
 import { MdEmail } from "react-icons/md";
 import { BsMessenger } from "react-icons/bs";
@@ -6,6 +7,7 @@ import { IoLogoWhatsapp } from "react-icons/io";
 
 import { useRef } from 'react';
 import emailjs from '@emailjs/browser';
+import { fadeIn } from '../../vaariants';
 
 
 
@@ -25,11 +27,25 @@ const Contact = () => {
   }
   return (
     <section id="contact">
-      <h5>Get In Touch</h5>
-      <h2>Contact Me</h2>
+      <motion.h5
+       variants={fadeIn('down', 0.3)}
+       initial='hidden'
+       whileInView={'show'}
+       viewport={{once:false, amount:0.7 }}>Get In Touch</motion.h5>
+      
+      <motion.h2
+       variants={fadeIn('down', 0.3)}
+       initial='hidden'
+       whileInView={'show'}
+       viewport={{once:false, amount:0.7 }}>Contact Me</motion.h2>
 
       <div className="container contact-container">
-        <div className="contact-options">
+        <motion.div
+        variants={fadeIn('right', 0.5)}
+        initial='hidden'
+        whileInView={'show'}
+        viewport={{once:false, amount: 0.3}}
+        className="contact-options">
           <article className="contact-option">
             <MdEmail className='contact-option-icon' />
             <h4>Email</h4>
@@ -48,13 +64,20 @@ const Contact = () => {
             <h5>+8801792978577</h5>
             <a href="https://api.whatsapp.com/send?phone+8801792978577">Send Message</a>
           </article>
-        </div>
-        <form ref={form} onSubmit={sendEmail} >
+        </motion.div>
+
+        <motion.form
+        variants={fadeIn('left', 0.5)}
+        initial='hidden'
+        whileInView={'show'}
+        viewport={{once:false, amount: 0.3}} 
+        ref={form}
+          onSubmit={sendEmail} >
           <input type="text" name="name" id="name" placeholder='Your Full Name' required />
           <input type="email" name="email" id="email" placeholder='Your Email' required />
           <textarea name="message" id=""  rows="7" placeholder='Your Message' required ></textarea>
           <button type="submit" className='btn btn-primary' >Send Message</button>
-        </form>
+        </motion.form>
       </div>
     </section>
   )

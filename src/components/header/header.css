@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap');
+
 header {
     height: 110vh;
     padding-top: 4rem;
@@ -8,7 +10,22 @@ header {
     height: 100%;
     position: relative;
 }
-
+.header_container .title{
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.5rem;
+}
+.header_container .name{
+    color: var(--color-primary);
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 600;
+}
+.header_container .post{
+    color: #23eb00;
+    font-size: 2.5rem;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+}
 /*=============== CTA ============  */
 .cta{
     margin-top: 2.5rem;

@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import './portfolio.css';
 import IMG1 from '../../assets/portfolio-1.png';
 import IMG2 from '../../assets/portfolio-8.png';
@@ -10,6 +11,7 @@ import IMG7 from '../../assets/portfolio-5.png';
 import IMG8 from '../../assets/portfolio-6.png';
 import IMG9 from '../../assets/portfolio-7.png';
 import IMG10 from '../../assets/portfolio-9.png';
+import { fadeIn } from '../../vaariants';
 
 
 const data= [
@@ -90,10 +92,23 @@ const Portfolio = () => {
   
   return (
     <section id="portfolio">
-    <h5>My Recent Work</h5>
-    <h2>Portfolio</h2>
+    <motion.h5
+       variants={fadeIn('down', 0.3)}
+       initial='hidden'
+       whileInView={'show'}
+       viewport={{once:false, amount:0.7 }}>My Recent Work</motion.h5>
+    
+    <motion.h2
+       variants={fadeIn('down', 0.3)}
+       initial='hidden'
+       whileInView={'show'}
+       viewport={{once:false, amount:0.7 }}>Portfolio</motion.h2>
 
-    <div className="container portfolio-container">
+    <motion.div
+      variants={fadeIn('up', 0.2)}
+      initial='hidden'
+      whileInView={'show'}
+      viewport={{once:false, amount:0.3 }} className="container portfolio-container">
       {
         data.map(({id, image, title, github, demo}) => {
           return(
@@ -110,7 +125,7 @@ const Portfolio = () => {
           )
         })
       }
-    </div>
+    </motion.div>
     </section>
   )
 }
